@@ -1,5 +1,5 @@
 <template>
-  <div class="add-blog">
+  <div id="add-blog">
     <h2>写博客</h2>
     <form action method="post" v-if="!submitted">
       <div>
@@ -11,7 +11,7 @@
         <label>内容：</label>
         <textarea name="content" id cols="30" rows="10" v-model="blog.content"></textarea>
       </div>
-      <div id="checkbox">
+      <div id="checkboxes">
         <label>分类：</label>
         <input type="checkbox" name="classify" value="vue" v-model="blog.categories">Vue.js
         <input type="checkbox" name="classify" value="angular4" v-model="blog.categories">Angular4
@@ -30,7 +30,7 @@
 
     <h3 v-if="submitted">您的博客发送成功！！</h3>
 
-    <div id="prview">
+    <div id="preview">
       <h3>博客总览</h3>
       <p>博客标题：{{blog.subject}}</p>
       <p>博客内容：</p>
@@ -78,4 +78,59 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+#add-blog *{
+  box-sizing: border-box;
+}
+
+#add-blog {
+  margin: 20px auto;
+  max-width: 600px;
+  padding: 20px;
+}
+
+label{
+  display: block;
+  margin: 20px 0 10px;
+}
+
+input[type="text"],textarea, select{
+  display: block;
+  width: 100%;
+  padding: 8px;
+}
+
+textarea {
+  height: 200px;
+}
+
+#checkboxes label{
+  display: inline-block;
+  margin-top: 0px;
+}
+
+#checkboes input{
+  display: inline-block;
+  margin-right: 10px;
+}
+
+button {
+  display: block;
+  margin: 20px 0;
+  background: crimson;
+  color: #ffffff;
+  padding: 14px;
+  border-radius: 4px;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+#preview {
+  padding: 10px 20px;
+  border: 1px dotted #cccccc;
+  margin: 30px 0;
+}
+
+h3{
+  margin-top: 10px;
+}
 </style>
