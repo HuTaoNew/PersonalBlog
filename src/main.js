@@ -22,6 +22,12 @@ Vue.directive('theme', {
     } else if (binding == 'narrow') {
       el.style.maxWidth = '560px';
     }
+
+    if (binding.arg == 'column'){
+
+    } else if (binding.arg == ''){
+
+    }
   }
 })
 

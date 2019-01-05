@@ -1,16 +1,25 @@
 <template>
   <div id="app">
+    <BlogHeader></BlogHeader>
     <router-view/>
   </div>
 </template>
 
 <script>
+  import BlogHeader from "./components/BlogHeader";
+
 export default {
-  name: 'App'
+  name: 'App',
+  components: {BlogHeader},
+  comments:{
+    BlogHeader
+  }
 }
 </script>
 
+
 <style>
+
 /* #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;

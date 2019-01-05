@@ -1,6 +1,7 @@
 <template>
   <div v-theme="'wide'" class="show-blogs">
     <h1>博客总览</h1>
+    <input type="text" placeholder="搜索" v-model="search">
     <div v-for="(blog, index) in blogs" :key="index" class="single-blog">
       <h2 v-rainbow="">{{blog.title}}</h2>
       <article>
@@ -15,7 +16,15 @@ export default {
   name: 'show-blogs',
   data () {
     return {
-      blogs: []
+      blogs: [],
+      search: ''
+    }
+  },
+  computed:{
+    filteredBlogs: function () {
+      return this.blogs.filter((blog) => {
+        return blog.title.match(this.search);
+      })
     }
   },
   created(){
