@@ -62,7 +62,7 @@ export default {
   methods: {
     addBlog() {
       this.$http
-        .post("https://jsonplaceholder.typicode.com/posts", {
+        .post("https://wd3862536764lzhyoq.wilddogio.com/post.json", {
           title: this.blog.subject,
           body: this.blog.content,
           userId: 1

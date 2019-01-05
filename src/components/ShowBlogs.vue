@@ -30,11 +30,11 @@ export default {
     }
   },
   created(){
-    this.$http.get("https://jsonplaceholder.typicode.com/posts")
+    this.$http.get("https://wd3862536764lzhyoq.wilddogio.com/post.json")
     .then((data) => {
       // console.log(data);
-      this.blogs = data.body.slice(0, 10);
-      console.log(this.blogs);
+      this.blogs = data.body;
+      // console.log(this.blogs);
     })
   }
 }
