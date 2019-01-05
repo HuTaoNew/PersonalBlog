@@ -7,7 +7,11 @@ import VueResource from 'vue-resource'
 import axios from 'axios'
 
 Vue.use(VueResource);
+Vue.prototype.$axios = axios;
+
 Vue.config.productionTip = false;
+
+
 
 //自定义指令
 Vue.directive('rainbow', {

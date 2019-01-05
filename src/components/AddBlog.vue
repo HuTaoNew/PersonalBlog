@@ -71,7 +71,7 @@ export default {
       //     console.log(data);
       //     this.submitted = true;
       //   });
-      this.axios
+      this.$axios
         .post("https://wd3862536764lzhyoq.wilddogio.com/post.json", {
           title: this.blog.subject,
           body: this.blog.content,
