@@ -15,10 +15,16 @@
           }
       },
       created() {
-          this.$http.get("https://jsonplaceholder.typicode.com/posts/" + this.id)
+          this.$http.get("https://wd3862536764lzhyoq.wilddogio.com/post.json")
             .then((data) => {
-              this.blog = data.body;
+              return data.json();
+              //this.blog = data.body;
             })
+            .then((data) => {
+              this.blog = data[this.id];
+              console.log(this.blog);
+            })
+
       }
     }
 </script>

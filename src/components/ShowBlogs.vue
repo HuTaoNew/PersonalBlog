@@ -32,10 +32,22 @@ export default {
   created(){
     this.$http.get("https://wd3862536764lzhyoq.wilddogio.com/post.json")
     .then((data) => {
-      // console.log(data);
-      this.blogs = data.body;
+      console.log(data.json());
+      return data.json();
+      // this.blogs = data.body;
       // console.log(this.blogs);
-    })
+    }).then((data) => {
+        let blogsArray = [];
+        let blog = {};
+        for (let key in data){
+          console.log(data[key]);
+          data[key].id = key;
+          //blogsArray.push(data[key]);
+        }
+        this.blogs = data;
+        console.log(this.blogs[0]);
+      console.log(this.blogs[1]);
+      })
   }
 }
 </script>
