@@ -2,6 +2,8 @@
     <div id="single-blog">
       <h1>{{blog.title}}</h1>
       <article>{{blog.body}}</article>
+      <button @click="deleteSingleBlog()">Delete</button>
+      <router-link v-bind:to="'/edit/' + id">Edit Blog</router-link>
     </div>
 </template>
 
@@ -13,6 +15,14 @@
             id: this.$route.params.id,
             blog: {}
           }
+      },
+      methods:{
+        deleteSingleBlog(){
+          this.$http.delete("https://wd3862536764lzhyoq.wilddogio.com/post/" + this.id +".json")
+            .then(response => {
+              this.$router.push({path:'/'});
+            })
+        }
       },
       created() {
           this.$http.get("https://wd3862536764lzhyoq.wilddogio.com/post.json")
