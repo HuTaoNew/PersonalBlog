@@ -61,7 +61,17 @@ export default {
   },
   methods: {
     addBlog() {
-      this.$http
+      // this.$http
+      //   .post("https://wd3862536764lzhyoq.wilddogio.com/post.json", {
+      //     title: this.blog.subject,
+      //     body: this.blog.content,
+      //     userId: 1
+      //   })
+      //   .then(data => {
+      //     console.log(data);
+      //     this.submitted = true;
+      //   });
+      this.axios
         .post("https://wd3862536764lzhyoq.wilddogio.com/post.json", {
           title: this.blog.subject,
           body: this.blog.content,
@@ -71,6 +81,7 @@ export default {
           console.log(data);
           this.submitted = true;
         });
+
     }
   }
 };
