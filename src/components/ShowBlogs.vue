@@ -3,7 +3,9 @@
     <h1>博客总览</h1>
     <input type="text" placeholder="搜索" v-model="search">
     <div v-for="(blog, index) in blogs" :key="index" class="single-blog">
-      <h2 v-rainbow="">{{blog.title}}</h2>
+      <router-link :to="'/single/' + blog.id">
+        <h2 v-rainbow="">{{blog.title}}</h2>
+      </router-link>
       <article>
         {{blog.body}}
       </article>
@@ -50,5 +52,17 @@ export default {
   margin: 20px 0;
   box-sizing: border-box;
   background: #eeeeee;
+  border: 1px dotted #aaa;
 }
+
+  #show-blogs a{
+    color: #444;
+    text-decoration: none;
+  }
+
+  input[type=text]{
+    padding: 8px;
+    width: 100%;
+    box-sizing: border-box;
+  }
 </style>
